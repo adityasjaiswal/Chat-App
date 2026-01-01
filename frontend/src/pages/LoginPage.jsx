@@ -41,7 +41,7 @@ const LoginPage = () => {
     <div className='min-h-screen bg-cover bg-center flex items-center justify-center gap-8 sm:justify-evenly max-sm:flex-col backdrop-blur-xl'>
 
       {/* Left side */}
-      <img src={assets.logo_big} alt="Logo" className='w-[min(30vw,250px)]' />
+      <img src={assets.logo_icon} alt="Logo" className='w-[min(30vw,170px)]' />
 
       {/* Right Side */}
       <form onSubmit={submitHandler}   

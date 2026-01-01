@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from 'react'
-import assests from '../assets/assets.js'
+import assets from '../assets/assets.js'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../context/AuthContext.jsx'
 import { ChatContext } from '../context/ChatContext.jsx'
@@ -40,11 +40,11 @@ const Sidebar = () => {
         {/* Header */}
         <div className='flex justify-between items-center px-5 max-h-[10%]'>
           <div className='flex gap-1'>
-            <img src='/image.png' alt='Logo' className='max-w-6 cursor-pointer' />
+            <img src={assets.logo_icon} alt='Logo' className='max-w-6 cursor-pointer' />
             <p>Chit Chat</p>
           </div>
           <div className='relative py-2 group '>
-            <img src={assests.menu_icon} alt='Menu' className='max-h-5 cursor-pointer' />
+            <img src={assets.menu_icon} alt='Menu' className='max-h-5 cursor-pointer' />
             <div className='absolute top-7 right-0 z-20  p-4 rounded-md bg-[#282142] border border-gray-600 text-gray-100 hidden group-hover:block flex justify-center items-center text-sm text-nowrap'>
               <Link to='/profile'>Edit Profile</Link>
               <hr className='my-2 border-gray-600' />
@@ -57,7 +57,7 @@ const Sidebar = () => {
 
         {/* Search Bar */}
         <div className='mt-5 m-auto w-[95%] h-10 max-h-[10%] bg-gray-700 rounded-full flex items-center px-3 py-1'>
-          <img src={assests.search_icon} alt='Search' className='max-h-4 max-w-3' onClick={() => { searchRef.current.focus() }} />
+          <img src={assets.search_icon} alt='Search' className='max-h-4 max-w-3' onClick={() => { searchRef.current.focus() }} />
           <input
             ref={searchRef}
             type='text'
@@ -86,7 +86,7 @@ const Sidebar = () => {
                   }}
                 >
                   <div className='flex gap-5 item-center'>
-                    <img src={user.avatar ?? assests.avatar_icon} alt='User Avatar' className='max-h-10 aspect-[1/1] rounded-full my-auto' />
+                    <img src={user.avatar ?? assets.avatar_icon} alt='User Avatar' className='max-h-10 aspect-[1/1] rounded-full my-auto' />
                     <div>
                       <div className='my-0'>{user.name}</div>
                       {sidebarUser.find(sideUser => sideUser._id.toString() === user._id.toString()) ?
@@ -105,7 +105,7 @@ const Sidebar = () => {
         ) : (
           <div>
             <div className='flex items-center gap-2 py-3 mx-4'>
-              <img onClick={() => setBlockUserSidebar(false)} src={assests.arrow_icon} alt='Arrow Icon' className='max-w-3 hover:cursor-pointer' />
+              <img onClick={() => setBlockUserSidebar(false)} src={assets.arrow_icon} alt='Arrow Icon' className='max-w-3 hover:cursor-pointer' />
               <p>Blocked Users</p>
             </div>
             {blockedUsers.length > 0 ?
@@ -123,7 +123,7 @@ const Sidebar = () => {
                   }}
                 >
                   <div className='flex gap-5 item-center'>
-                    <img src={user.avatar ?? assests.avatar_icon} alt='User Avatar' className='max-h-10 aspect-[1/1] rounded-full my-auto' />
+                    <img src={user.avatar ?? assets.avatar_icon} alt='User Avatar' className='max-h-10 aspect-[1/1] rounded-full my-auto' />
                     <div>
                       <div className='my-0'>{user.name}</div>
                       {sidebarUser.find(sideUser => sideUser._id.toString() === user._id.toString()) ?
